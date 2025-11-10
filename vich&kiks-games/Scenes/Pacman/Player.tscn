@@ -1,16 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://d4axu7n6uk2lo"]
+[gd_scene load_steps=9 format=3 uid="uid://cxo6grhc2ivha"]
 
 [ext_resource type="Texture2D" uid="uid://ch11hkxeuhipr" path="res://Scenes/Pacman/pacman-anim-1.png.png" id="1_g0pt2"]
+[ext_resource type="Script" uid="uid://c6mrqhimvqioj" path="res://Scenes/Pacman/Pacman.gd" id="1_qea5t"]
 [ext_resource type="Texture2D" uid="uid://cjt8qykhie3kn" path="res://Scenes/Pacman/pacman-anim-2.png.png" id="2_b1vjm"]
 [ext_resource type="Texture2D" uid="uid://cit7a3liamyj3" path="res://Scenes/Pacman/pacman-anim-3.png (1).png" id="3_qea5t"]
+[ext_resource type="Texture2D" uid="uid://dasscklhylumn" path="res://Scenes/Pacman/New Piskel-1.png.png" id="5_24k77"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_24k77"]
 animations = [{
-"frames": [],
-"loop": true,
-"name": &"default",
-"speed": 5.0
-}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_g0pt2")
@@ -29,10 +26,45 @@ animations = [{
 "speed": 8.0
 }]
 
-[node name="Node2D" type="Node2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hv8nc"]
+size = Vector2(32, 32)
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -16)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bbdes"]
+size = Vector2(32, 32)
+
+[node name="Pacman" type="Node2D"]
+position = Vector2(1, 0)
+script = ExtResource("1_qea5t")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="Player" type="CharacterBody2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_24k77")
 animation = &"new_animation"
-frame_progress = 0.32649514
+frame_progress = 0.86906254
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+shape = SubResource("RectangleShape2D_hv8nc")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="NewPiskel1_png" type="Sprite2D" parent="Area2D"]
+position = Vector2(148, 0)
+texture = ExtResource("5_24k77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(148, 0)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(-960, -102)
+
+[node name="NewPiskel1_png" type="Sprite2D" parent="Area2D2"]
+position = Vector2(1108, 70)
+texture = ExtResource("5_24k77")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(1108, 70)
+shape = SubResource("RectangleShape2D_bbdes")

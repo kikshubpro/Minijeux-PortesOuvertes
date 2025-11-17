@@ -2,9 +2,9 @@ extends CharacterBody2D
 
 
 const SPEED = 500.0
-const JUMP_VELOCITY = -500.0
+const JUMP_VELOCITY = -1000.0
 
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")*1.5
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")*4
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -18,3 +18,6 @@ func _physics_process(delta):
 	velocity.x = SPEED
 
 	move_and_slide()
+	
+func Explode():
+	queue_free()

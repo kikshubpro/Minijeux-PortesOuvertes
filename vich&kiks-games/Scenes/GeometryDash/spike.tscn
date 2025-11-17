@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://uqdl4q7j44j1"]
+
+[ext_resource type="Texture2D" uid="uid://fcpvok3ojrsf" path="res://Scenes/GeometryDash/Retouch_2024112913572713.webp" id="1_1al2d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1al2d"]
+size = Vector2(273.57147, 423.5714)
+
+[node name="Spike" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.07, 0.07)
+texture = ExtResource("1_1al2d")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 0.17499946)
+scale = Vector2(0.07, 0.07)
+shape = SubResource("RectangleShape2D_1al2d")

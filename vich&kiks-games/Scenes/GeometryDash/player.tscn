@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://6l3vsgv20c28"]
+
+[ext_resource type="Script" uid="uid://cjio7jslw4xgn" path="res://Scenes/GeometryDash/GeometryDash.gd" id="1_ab88r"]
+[ext_resource type="Texture2D" uid="uid://cajcyvaybtuga" path="res://Scenes/GeometryDash/m9wghycesv6c1.png" id="2_3mbj0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hqtel"]
+size = Vector2(130, 130)
+
+[node name="Player" type="CharacterBody2D"]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_ab88r")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(79, -7)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_3mbj0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(79, -15)
+shape = SubResource("RectangleShape2D_hqtel")

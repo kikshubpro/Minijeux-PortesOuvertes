@@ -1,10 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cxo6grhc2ivha"]
+[gd_scene load_steps=11 format=3 uid="uid://cxo6grhc2ivha"]
 
 [ext_resource type="Texture2D" uid="uid://ch11hkxeuhipr" path="res://Scenes/Pacman/pacman-anim-1.png.png" id="1_g0pt2"]
 [ext_resource type="Script" uid="uid://c6mrqhimvqioj" path="res://Scenes/Pacman/Pacman.gd" id="1_qea5t"]
 [ext_resource type="Texture2D" uid="uid://cjt8qykhie3kn" path="res://Scenes/Pacman/pacman-anim-2.png.png" id="2_b1vjm"]
 [ext_resource type="Texture2D" uid="uid://cit7a3liamyj3" path="res://Scenes/Pacman/pacman-anim-3.png (1).png" id="3_qea5t"]
-[ext_resource type="Texture2D" uid="uid://dasscklhylumn" path="res://Scenes/Pacman/New Piskel-1.png.png" id="5_24k77"]
+[ext_resource type="Texture2D" uid="uid://ceemojd38kv8h" path="res://Scenes/Pacman/New Piskel.png" id="5_qea5t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_24k77"]
 animations = [{
@@ -30,6 +30,12 @@ animations = [{
 size = Vector2(32, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bbdes"]
+size = Vector2(32.00001, 159.82788)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_24k77"]
+size = Vector2(32, 96)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qea5t"]
 size = Vector2(32, 32)
 
 [node name="Pacman" type="Node2D"]
@@ -37,34 +43,1001 @@ position = Vector2(1, 0)
 script = ExtResource("1_qea5t")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-1, 0)
 
 [node name="Player" type="CharacterBody2D" parent="."]
+position = Vector2(-1, -48)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_24k77")
 animation = &"new_animation"
-frame_progress = 0.86906254
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_hv8nc")
 
-[node name="Area2D" type="Area2D" parent="."]
-
-[node name="NewPiskel1_png" type="Sprite2D" parent="Area2D"]
-position = Vector2(148, 0)
-texture = ExtResource("5_24k77")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(148, 0)
-shape = SubResource("RectangleShape2D_bbdes")
-
-[node name="Area2D2" type="Area2D" parent="."]
+[node name="haut map" type="Area2D" parent="."]
 position = Vector2(-960, -102)
 
-[node name="NewPiskel1_png" type="Sprite2D" parent="Area2D2"]
-position = Vector2(1108, 70)
-texture = ExtResource("5_24k77")
+[node name="allongé" type="Sprite2D" parent="haut map"]
+position = Vector2(671, -206.5)
+scale = Vector2(18, 1)
+texture = ExtResource("5_qea5t")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
-position = Vector2(1108, 70)
+[node name="allongécollision" type="CollisionShape2D" parent="haut map"]
+position = Vector2(671, -206.5)
+scale = Vector2(18, 0.2)
 shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout" type="Sprite2D" parent="haut map"]
+position = Vector2(399, -143.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol" type="CollisionShape2D" parent="haut map"]
+position = Vector2(399, -143.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="allongé2" type="Sprite2D" parent="haut map"]
+position = Vector2(479, -143.5)
+scale = Vector2(2, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision2" type="CollisionShape2D" parent="haut map"]
+position = Vector2(479, -143.5)
+scale = Vector2(2, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé3" type="Sprite2D" parent="haut map"]
+position = Vector2(639, -142.5)
+scale = Vector2(6, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision3" type="CollisionShape2D" parent="haut map"]
+position = Vector2(639, -142.5)
+scale = Vector2(6, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé4" type="Sprite2D" parent="haut map"]
+position = Vector2(799, -142.5)
+scale = Vector2(2, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision4" type="CollisionShape2D" parent="haut map"]
+position = Vector2(799, -142.5)
+scale = Vector2(2, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé5" type="Sprite2D" parent="haut map"]
+position = Vector2(911, -142.5)
+scale = Vector2(3, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision5" type="CollisionShape2D" parent="haut map"]
+position = Vector2(911, -142.5)
+scale = Vector2(3, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé6" type="Sprite2D" parent="haut map"]
+position = Vector2(431, -79.5)
+scale = Vector2(3, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision6" type="CollisionShape2D" parent="haut map"]
+position = Vector2(431, -79.5)
+scale = Vector2(3, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout2" type="Sprite2D" parent="haut map"]
+position = Vector2(559, -78.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol2" type="CollisionShape2D" parent="haut map"]
+position = Vector2(559, -78.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="debout3" type="Sprite2D" parent="haut map"]
+position = Vector2(495, -47.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol3" type="CollisionShape2D" parent="haut map"]
+position = Vector2(495, -47.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="allongé7" type="Sprite2D" parent="haut map"]
+position = Vector2(447, 48.5)
+scale = Vector2(4, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision7" type="CollisionShape2D" parent="haut map"]
+position = Vector2(447, 48.5)
+scale = Vector2(4, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé8" type="Sprite2D" parent="haut map"]
+position = Vector2(447, -15.5)
+scale = Vector2(4, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision8" type="CollisionShape2D" parent="haut map"]
+position = Vector2(447, -15.5)
+scale = Vector2(4, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout4" type="Sprite2D" parent="haut map"]
+position = Vector2(495, 70)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol4" type="CollisionShape2D" parent="haut map"]
+position = Vector2(495, 70)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout5" type="Sprite2D" parent="haut map"]
+position = Vector2(623, -47.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol5" type="CollisionShape2D" parent="haut map"]
+position = Vector2(623, -47.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="allongé9" type="Sprite2D" parent="haut map"]
+position = Vector2(591, -14.5)
+scale = Vector2(3, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision9" type="CollisionShape2D" parent="haut map"]
+position = Vector2(591, -14.5)
+scale = Vector2(3, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé10" type="Sprite2D" parent="haut map"]
+position = Vector2(703, -79.5)
+scale = Vector2(4, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision10" type="CollisionShape2D" parent="haut map"]
+position = Vector2(703, -79.5)
+scale = Vector2(4, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout6" type="Sprite2D" parent="haut map"]
+position = Vector2(815, -30.5)
+scale = Vector2(1, 6)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol6" type="CollisionShape2D" parent="haut map"]
+position = Vector2(815, -30.5)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="debout7" type="Sprite2D" parent="haut map"]
+position = Vector2(943, -62)
+scale = Vector2(1, 6)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol7" type="CollisionShape2D" parent="haut map"]
+position = Vector2(943, -62)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="debout8" type="Sprite2D" parent="haut map"]
+position = Vector2(879, -78.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol8" type="CollisionShape2D" parent="haut map"]
+position = Vector2(879, -78.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="debout9" type="Sprite2D" parent="haut map"]
+position = Vector2(687, 6)
+scale = Vector2(1, 6)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol9" type="CollisionShape2D" parent="haut map"]
+position = Vector2(687, 6)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="allongé11" type="Sprite2D" parent="haut map"]
+position = Vector2(735, -14.5)
+scale = Vector2(2, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision11" type="CollisionShape2D" parent="haut map"]
+position = Vector2(735, -14.5)
+scale = Vector2(2, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout10" type="Sprite2D" parent="haut map"]
+position = Vector2(623, 33.5)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol10" type="CollisionShape2D" parent="haut map"]
+position = Vector2(623, 33.5)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout11" type="Sprite2D" parent="haut map"]
+position = Vector2(559, 70)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol11" type="CollisionShape2D" parent="haut map"]
+position = Vector2(559, 70)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout12" type="Sprite2D" parent="haut map"]
+position = Vector2(751, 33.5)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol12" type="CollisionShape2D" parent="haut map"]
+position = Vector2(751, 33.5)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout13" type="Sprite2D" parent="haut map"]
+position = Vector2(879, 33.5)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol13" type="CollisionShape2D" parent="haut map"]
+position = Vector2(879, 33.5)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout14" type="Sprite2D" parent="haut map"]
+position = Vector2(943, 86)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol14" type="CollisionShape2D" parent="haut map"]
+position = Vector2(943, 86)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="haut map2" type="Area2D" parent="."]
+position = Vector2(958, 102)
+scale = Vector2(-0.9999988, -1.000001)
+
+[node name="allongé" type="Sprite2D" parent="haut map2"]
+position = Vector2(671, -206.5)
+scale = Vector2(18, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(671, -206.5)
+scale = Vector2(18, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout" type="Sprite2D" parent="haut map2"]
+position = Vector2(399, -143.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(399, -143.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="allongé2" type="Sprite2D" parent="haut map2"]
+position = Vector2(479, -143.5)
+scale = Vector2(2, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision2" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(479, -143.5)
+scale = Vector2(2, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé3" type="Sprite2D" parent="haut map2"]
+position = Vector2(639, -142.5)
+scale = Vector2(6, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision3" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(639, -142.5)
+scale = Vector2(6, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé4" type="Sprite2D" parent="haut map2"]
+position = Vector2(799, -142.5)
+scale = Vector2(2, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision4" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(799, -142.5)
+scale = Vector2(2, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé5" type="Sprite2D" parent="haut map2"]
+position = Vector2(911, -142.5)
+scale = Vector2(3, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision5" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(911, -142.5)
+scale = Vector2(3, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé6" type="Sprite2D" parent="haut map2"]
+position = Vector2(431, -79.5)
+scale = Vector2(3, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision6" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(431, -79.5)
+scale = Vector2(3, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout2" type="Sprite2D" parent="haut map2"]
+position = Vector2(559, -78.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol2" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(559, -78.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="debout3" type="Sprite2D" parent="haut map2"]
+position = Vector2(495, -47.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol3" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(495, -47.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="allongé7" type="Sprite2D" parent="haut map2"]
+position = Vector2(447, 48.5)
+scale = Vector2(4, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision7" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(447, 48.5)
+scale = Vector2(4, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé8" type="Sprite2D" parent="haut map2"]
+position = Vector2(447, -15.5)
+scale = Vector2(4, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision8" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(447, -15.5)
+scale = Vector2(4, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout4" type="Sprite2D" parent="haut map2"]
+position = Vector2(495, 70)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol4" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(495, 70)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout5" type="Sprite2D" parent="haut map2"]
+position = Vector2(623, -47.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol5" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(623, -47.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="allongé9" type="Sprite2D" parent="haut map2"]
+position = Vector2(591, -14.5)
+scale = Vector2(3, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision9" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(591, -14.5)
+scale = Vector2(3, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé10" type="Sprite2D" parent="haut map2"]
+position = Vector2(703, -79.5)
+scale = Vector2(4, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision10" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(703, -79.5)
+scale = Vector2(4, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout6" type="Sprite2D" parent="haut map2"]
+position = Vector2(815, -30.5)
+scale = Vector2(1, 6)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol6" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(815, -30.5)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="debout7" type="Sprite2D" parent="haut map2"]
+position = Vector2(943, -62)
+scale = Vector2(1, 6)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol7" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(943, -62)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="debout8" type="Sprite2D" parent="haut map2"]
+position = Vector2(879, -78.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol8" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(879, -78.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="debout9" type="Sprite2D" parent="haut map2"]
+position = Vector2(687, 6)
+scale = Vector2(1, 6)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol9" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(687, 6)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="allongé11" type="Sprite2D" parent="haut map2"]
+position = Vector2(735, -14.5)
+scale = Vector2(2, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision11" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(735, -14.5)
+scale = Vector2(2, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout10" type="Sprite2D" parent="haut map2"]
+position = Vector2(623, 33.5)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol10" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(623, 33.5)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout11" type="Sprite2D" parent="haut map2"]
+position = Vector2(559, 70)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol11" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(559, 70)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout12" type="Sprite2D" parent="haut map2"]
+position = Vector2(751, 33.5)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol12" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(751, 33.5)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout13" type="Sprite2D" parent="haut map2"]
+position = Vector2(879, 33.5)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol13" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(879, 33.5)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout14" type="Sprite2D" parent="haut map2"]
+position = Vector2(943, 86)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol14" type="CollisionShape2D" parent="haut map2"]
+position = Vector2(943, 86)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="haut map3" type="Area2D" parent="."]
+position = Vector2(-960, 102)
+scale = Vector2(0.99999964, -1.000001)
+
+[node name="allongé" type="Sprite2D" parent="haut map3"]
+position = Vector2(671, -206.5)
+scale = Vector2(18, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(671, -206.5)
+scale = Vector2(18, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout" type="Sprite2D" parent="haut map3"]
+position = Vector2(399, -143.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(399, -143.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="allongé2" type="Sprite2D" parent="haut map3"]
+position = Vector2(479, -143.5)
+scale = Vector2(2, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision2" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(479, -143.5)
+scale = Vector2(2, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé3" type="Sprite2D" parent="haut map3"]
+position = Vector2(639, -142.5)
+scale = Vector2(6, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision3" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(639, -142.5)
+scale = Vector2(6, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé4" type="Sprite2D" parent="haut map3"]
+position = Vector2(799, -142.5)
+scale = Vector2(2, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision4" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(799, -142.5)
+scale = Vector2(2, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé5" type="Sprite2D" parent="haut map3"]
+position = Vector2(911, -142.5)
+scale = Vector2(3, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision5" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(911, -142.5)
+scale = Vector2(3, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé6" type="Sprite2D" parent="haut map3"]
+position = Vector2(431, -79.5)
+scale = Vector2(3, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision6" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(431, -79.5)
+scale = Vector2(3, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout2" type="Sprite2D" parent="haut map3"]
+position = Vector2(559, -78.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol2" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(559, -78.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="debout3" type="Sprite2D" parent="haut map3"]
+position = Vector2(495, -47.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol3" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(495, -47.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="allongé7" type="Sprite2D" parent="haut map3"]
+position = Vector2(447, 48.5)
+scale = Vector2(4, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision7" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(447, 48.5)
+scale = Vector2(4, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé8" type="Sprite2D" parent="haut map3"]
+position = Vector2(447, -15.5)
+scale = Vector2(4, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision8" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(447, -15.5)
+scale = Vector2(4, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout4" type="Sprite2D" parent="haut map3"]
+position = Vector2(495, 70)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol4" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(495, 70)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout5" type="Sprite2D" parent="haut map3"]
+position = Vector2(623, -47.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol5" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(623, -47.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="allongé9" type="Sprite2D" parent="haut map3"]
+position = Vector2(591, -14.5)
+scale = Vector2(3, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision9" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(591, -14.5)
+scale = Vector2(3, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé10" type="Sprite2D" parent="haut map3"]
+position = Vector2(703, -79.5)
+scale = Vector2(4, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision10" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(703, -79.5)
+scale = Vector2(4, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout6" type="Sprite2D" parent="haut map3"]
+position = Vector2(815, -30.5)
+scale = Vector2(1, 6)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol6" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(815, -30.5)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="debout7" type="Sprite2D" parent="haut map3"]
+position = Vector2(943, -62)
+scale = Vector2(1, 6)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol7" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(943, -62)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="debout8" type="Sprite2D" parent="haut map3"]
+position = Vector2(879, -78.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol8" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(879, -78.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="debout9" type="Sprite2D" parent="haut map3"]
+position = Vector2(687, 6)
+scale = Vector2(1, 6)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol9" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(687, 6)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="allongé11" type="Sprite2D" parent="haut map3"]
+position = Vector2(735, -14.5)
+scale = Vector2(2, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision11" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(735, -14.5)
+scale = Vector2(2, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout10" type="Sprite2D" parent="haut map3"]
+position = Vector2(623, 33.5)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol10" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(623, 33.5)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout11" type="Sprite2D" parent="haut map3"]
+position = Vector2(559, 70)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol11" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(559, 70)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout12" type="Sprite2D" parent="haut map3"]
+position = Vector2(751, 33.5)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol12" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(751, 33.5)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout13" type="Sprite2D" parent="haut map3"]
+position = Vector2(879, 33.5)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol13" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(879, 33.5)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout14" type="Sprite2D" parent="haut map3"]
+position = Vector2(943, 86)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol14" type="CollisionShape2D" parent="haut map3"]
+position = Vector2(943, 86)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="haut map4" type="Area2D" parent="."]
+position = Vector2(958, -102)
+scale = Vector2(-1, 1)
+
+[node name="allongé" type="Sprite2D" parent="haut map4"]
+position = Vector2(671, -206.5)
+scale = Vector2(18, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(671, -206.5)
+scale = Vector2(18, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout" type="Sprite2D" parent="haut map4"]
+position = Vector2(399, -143.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(399, -143.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="allongé2" type="Sprite2D" parent="haut map4"]
+position = Vector2(479, -143.5)
+scale = Vector2(2, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision2" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(479, -143.5)
+scale = Vector2(2, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé3" type="Sprite2D" parent="haut map4"]
+position = Vector2(639, -142.5)
+scale = Vector2(6, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision3" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(639, -142.5)
+scale = Vector2(6, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé4" type="Sprite2D" parent="haut map4"]
+position = Vector2(799, -142.5)
+scale = Vector2(2, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision4" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(799, -142.5)
+scale = Vector2(2, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé5" type="Sprite2D" parent="haut map4"]
+position = Vector2(911, -142.5)
+scale = Vector2(3, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision5" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(911, -142.5)
+scale = Vector2(3, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé6" type="Sprite2D" parent="haut map4"]
+position = Vector2(431, -79.5)
+scale = Vector2(3, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision6" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(431, -79.5)
+scale = Vector2(3, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout2" type="Sprite2D" parent="haut map4"]
+position = Vector2(559, -78.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol2" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(559, -78.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="debout3" type="Sprite2D" parent="haut map4"]
+position = Vector2(495, -47.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol3" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(495, -47.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="allongé7" type="Sprite2D" parent="haut map4"]
+position = Vector2(447, 48.5)
+scale = Vector2(4, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision7" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(447, 48.5)
+scale = Vector2(4, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé8" type="Sprite2D" parent="haut map4"]
+position = Vector2(447, -15.5)
+scale = Vector2(4, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision8" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(447, -15.5)
+scale = Vector2(4, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout4" type="Sprite2D" parent="haut map4"]
+position = Vector2(495, 70)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol4" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(495, 70)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout5" type="Sprite2D" parent="haut map4"]
+position = Vector2(623, -47.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol5" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(623, -47.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="allongé9" type="Sprite2D" parent="haut map4"]
+position = Vector2(591, -14.5)
+scale = Vector2(3, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision9" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(591, -14.5)
+scale = Vector2(3, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="allongé10" type="Sprite2D" parent="haut map4"]
+position = Vector2(703, -79.5)
+scale = Vector2(4, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision10" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(703, -79.5)
+scale = Vector2(4, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout6" type="Sprite2D" parent="haut map4"]
+position = Vector2(815, -30.5)
+scale = Vector2(1, 6)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol6" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(815, -30.5)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="debout7" type="Sprite2D" parent="haut map4"]
+position = Vector2(943, -62)
+scale = Vector2(1, 6)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol7" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(943, -62)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="debout8" type="Sprite2D" parent="haut map4"]
+position = Vector2(879, -78.5)
+scale = Vector2(1, 3)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol8" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(879, -78.5)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="debout9" type="Sprite2D" parent="haut map4"]
+position = Vector2(687, 6)
+scale = Vector2(1, 6)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol9" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(687, 6)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_24k77")
+
+[node name="allongé11" type="Sprite2D" parent="haut map4"]
+position = Vector2(735, -14.5)
+scale = Vector2(2, 1)
+texture = ExtResource("5_qea5t")
+
+[node name="allongécollision11" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(735, -14.5)
+scale = Vector2(2, 0.2)
+shape = SubResource("RectangleShape2D_bbdes")
+
+[node name="debout10" type="Sprite2D" parent="haut map4"]
+position = Vector2(623, 33.5)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol10" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(623, 33.5)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout11" type="Sprite2D" parent="haut map4"]
+position = Vector2(559, 70)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol11" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(559, 70)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout12" type="Sprite2D" parent="haut map4"]
+position = Vector2(751, 33.5)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol12" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(751, 33.5)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout13" type="Sprite2D" parent="haut map4"]
+position = Vector2(879, 33.5)
+scale = Vector2(1, 2)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol13" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(879, 33.5)
+scale = Vector2(1, 2)
+shape = SubResource("RectangleShape2D_qea5t")
+
+[node name="debout14" type="Sprite2D" parent="haut map4"]
+position = Vector2(943, 86)
+texture = ExtResource("5_qea5t")
+
+[node name="deboutcol14" type="CollisionShape2D" parent="haut map4"]
+position = Vector2(943, 86)
+shape = SubResource("RectangleShape2D_qea5t")

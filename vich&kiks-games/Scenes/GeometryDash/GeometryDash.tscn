@@ -1,9 +1,30 @@
-[gd_scene load_steps=3 format=3 uid="uid://br0jew6fosine"]
+[gd_scene load_steps=7 format=3 uid="uid://br0jew6fosine"]
 
 [ext_resource type="PackedScene" uid="uid://6l3vsgv20c28" path="res://Scenes/GeometryDash/player.tscn" id="1_mgt8m"]
 [ext_resource type="PackedScene" uid="uid://c8qaw88j7pbg5" path="res://Scenes/GeometryDash/single_bloc.tscn" id="2_f53v7"]
+[ext_resource type="PackedScene" uid="uid://ce57x7e47gsxs" path="res://Scenes/GeometryDash/kill_zone.tscn" id="3_f53v7"]
+[ext_resource type="PackedScene" uid="uid://uqdl4q7j44j1" path="res://Scenes/GeometryDash/spike.tscn" id="5_lwadv"]
+[ext_resource type="Script" uid="uid://c780sexdf2ky7" path="res://Scenes/GeometryDash/spike.gd" id="6_r0u6x"]
+
+[sub_resource type="GDScript" id="GDScript_lwadv"]
+script/source = "extends Node2D
+
+func _physics_process(delta: float) -> void:
+	$KillZone.position.y = $Player.position.y
+	$KillZone.position.x = $Player.SPEED*delta
+	
+
+func _on_kill_zone_body_entered(body: Node2D) -> void:
+	pass # Replace with function body.
+	var things = $KillZone.get_overlapping_bodies()
+	for t in things:
+		if t.has_method(\"Explode\"):
+			t.Explode()
+			$KillZone.queue_free()
+"
 
 [node name="Level" type="Node2D"]
+script = SubResource("GDScript_lwadv")
 
 [node name="Player" parent="." instance=ExtResource("1_mgt8m")]
 position = Vector2(271, 209)
@@ -13,5 +34,42 @@ position = Vector2(271, 209)
 [node name="SingleBloc" parent="." instance=ExtResource("2_f53v7")]
 position = Vector2(281, 235)
 
+[node name="SingleBloc3" parent="." instance=ExtResource("2_f53v7")]
+position = Vector2(389, 235)
+
+[node name="SingleBloc4" parent="." instance=ExtResource("2_f53v7")]
+position = Vector2(493, 236)
+
+[node name="SingleBloc5" parent="." instance=ExtResource("2_f53v7")]
+position = Vector2(720, 242)
+
+[node name="SingleBloc10" parent="." instance=ExtResource("2_f53v7")]
+position = Vector2(604, 239)
+
+[node name="SingleBloc11" parent="." instance=ExtResource("2_f53v7")]
+position = Vector2(826.00006, 242)
+
+[node name="SingleBloc6" parent="." instance=ExtResource("2_f53v7")]
+position = Vector2(927.00006, 247.00002)
+
+[node name="SingleBloc7" parent="." instance=ExtResource("2_f53v7")]
+position = Vector2(1049, 292)
+
+[node name="SingleBloc8" parent="." instance=ExtResource("2_f53v7")]
+position = Vector2(1149, 295)
+
+[node name="SingleBloc9" parent="." instance=ExtResource("2_f53v7")]
+position = Vector2(1257, 264)
+
 [node name="SingleBloc2" parent="." instance=ExtResource("2_f53v7")]
-position = Vector2(1210, 252.00002)
+position = Vector2(1383, 299)
+
+[node name="KillZone" parent="." instance=ExtResource("3_f53v7")]
+position = Vector2(271, 202)
+
+[node name="Spike" parent="." instance=ExtResource("5_lwadv")]
+position = Vector2(1465, 264)
+script = ExtResource("6_r0u6x")
+
+[connection signal="body_entered" from="KillZone" to="." method="_on_kill_zone_body_entered"]
+[connection signal="body_entered" from="Spike" to="Spike" method="_on_body_entered"]

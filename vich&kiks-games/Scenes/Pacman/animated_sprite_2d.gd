@@ -1,31 +1,35 @@
-extends Node2D  # Nous utilisons Node2D pour le déplacement
+extends AnimatedSprite2D
 
-var speed = 200  # Vitesse de déplacement de Pac-Man
-var velocity = Vector2.ZERO  # Vitesse initiale du personnage
+var speed = 200  # Vitesse du personnage
+var velocity = Vector2.ZERO  # Vitesse initiale
+
+# Référence à l'AnimatedSprite2D
+@onready var animated_sprite = $AnimatedSprite2D
+
+func _ready():
+	# Assurez-vous que l'animation "idle" existe dans le SpriteFrames et qu'elle est configurée
+	animated_sprite.play("idle")
 
 func _process(delta):
 	velocity = Vector2.ZERO  # Réinitialise la vitesse à chaque frame
 
-	# Détecte les touches fléchées pour déplacer Pac-Man
-	if Input.is_action_pressed("ui_right"):  # Flèche droite
-		velocity.x += 1 # Déplace Pac-Man vers la droite
-		while true:
-			if (Input.is_action_pressed("ui_left") or
-		 	Input.is_action_pressed("ui_down") or
-			Input.is_action_pressed("ui_up")):
-				break
-				
-	if Input.is_action_pressed("ui_left"):  # Flèche gauche
-		velocity.x -= 1  # Déplace Pac-Man vers la gauche
-	if Input.is_action_pressed("ui_down"):  # Flèche bas
-		velocity.y += 1  # Déplace Pac-Man vers le bas
-	if Input.is_action_pressed("ui_up"):  # Flèche haut
-		velocity.y -= 1
-		   # Déplace Pac-Man vers le haut
+	# Détecte les touches directionnelles et joue l'animation correspondante
+	if Input.is_action_pressed("ui_right"):
+		velocity.x = 1
+		animated_sprite.play("walk_right")  # Assure-toi que cette animation est définie dans SpriteFrames
+	elif Input.is_action_pressed("ui_left"):
+		velocity.x = -1
+		animated_sprite.play("walk_left")
+	if Input.is_action_pressed("ui_up"):
+		velocity.y = -1
+		animated_sprite.play("walk_up")
+	elif Input.is_action_pressed("ui_down"):
+		velocity.y = 1
+		animated_sprite.play("walk_down")
 
-	# Normalise la direction pour éviter que Pac-Man se déplace plus vite en diagonale
-	if velocity != Vector2.ZERO:
-		velocity = velocity.normalized() * speed  # Appliquer la vitesse
+	# Si aucune touche n'est pressée, on joue l'animation "idle"
+	if velocity == Vector2.ZERO:
+		animated_sprite.play("idle")
 
-		# Déplacer Pac-Man en fonction de la direction
-		position += velocity * delta  # Déplacer le Node2D
+	# Déplacer le personnage avec move_and_slide
+	move_and_slide(velocity)

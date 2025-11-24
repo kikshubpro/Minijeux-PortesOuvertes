@@ -1,25 +1,25 @@
-extends Node2D  # Nous étendons Node2D, car c'est un nœud non physique
+extends Node2D
 
-var speed = 200  # Vitesse de déplacement du personnage
-var velocity = Vector2.ZERO  # Initialiser la vitesse (vitesse nulle par défaut)
-
+var speed = 200  # Vitesse du personnage
+var velocity = Vector2.ZERO  # Vitesse initiale
 
 func _process(delta):
-	velocity = Vector2.ZERO  # Réinitialiser la vitesse à chaque frame
+	velocity = Vector2.ZERO  # Réinitialise la vitesse à chaque frame
 
-	# Détecte les touches fléchées pour déplacer Pac-Man
+	# Si une touche horizontale est pressée, on ne regarde pas les touches verticales
 	if Input.is_action_pressed("ui_right"):  # Flèche droite
-		velocity.x += 1  # Déplacer Pac-Man vers la droite
-	if Input.is_action_pressed("ui_left"):  # Flèche gauche
-		velocity.x -= 1  # Déplacer Pac-Man vers la gauche
-	if Input.is_action_pressed("ui_down"):  # Flèche bas
-		velocity.y += 1  # Déplacer Pac-Man vers le bas
+		velocity.x = 1  # Déplacement à droite
+	elif Input.is_action_pressed("ui_left"):  # Flèche gauche
+		velocity.x = -1  # Déplacement à gauche
+
+	# Si une touche verticale est pressée, on ne regarde pas les touches horizontales
 	if Input.is_action_pressed("ui_up"):  # Flèche haut
-		velocity.y -= 1  # Déplacer Pac-Man vers le haut
+		velocity.y = -1  # Déplacement vers le haut
+	elif Input.is_action_pressed("ui_down"):  # Flèche bas
+		velocity.y = 1  # Déplacement vers le bas
 
-	# Normaliser la direction pour éviter que Pac-Man se déplace plus vite en diagonale
-	if velocity != Vector2.ZERO:
-		velocity = velocity.normalized() * speed  # Appliquer la vitesse
+	# Appliquer la vitesse
+	velocity = velocity.normalized() * speed
 
-		# Déplacer Pac-Man en fonction de la direction
-		position += velocity * delta  # Déplacer le Node2D
+	# Déplacer le personnage
+	position += velocity * delta

@@ -1,28 +1,49 @@
-[gd_scene load_steps=11 format=3 uid="uid://cxo6grhc2ivha"]
+[gd_scene load_steps=15 format=3 uid="uid://cxo6grhc2ivha"]
 
-[ext_resource type="Texture2D" path="res://Scenes/Pacman/pacman-anim-1.png.png" id="1_g0pt2"]
 [ext_resource type="Script" uid="uid://c6mrqhimvqioj" path="res://Scenes/Pacman/Pacman.gd" id="1_qea5t"]
-[ext_resource type="Texture2D" path="res://Scenes/Pacman/pacman-anim-2.png.png" id="2_b1vjm"]
-[ext_resource type="Texture2D" path="res://Scenes/Pacman/pacman-anim-3.png (1).png" id="3_qea5t"]
+[ext_resource type="Texture2D" uid="uid://cg1tkl88mxwyy" path="res://Scenes/Pacman/Pacman-left/Pacman_left.png" id="2_hfdak"]
+[ext_resource type="Texture2D" uid="uid://cjjdc56foty58" path="res://Scenes/Pacman/Pacman-right/Pacman_right.png" id="2_qea5t"]
+[ext_resource type="Texture2D" uid="uid://d1rv5tn4gyj6x" path="res://Scenes/Pacman/Pacman-right/pacman_right1.png" id="3_24k77"]
+[ext_resource type="Texture2D" uid="uid://d1dgbd0hu5r6j" path="res://Scenes/Pacman/Pacman-left/Pacman_left1.png" id="3_88qsh"]
+[ext_resource type="Texture2D" uid="uid://c0eb5w3v323c1" path="res://Scenes/Pacman/Pacman-left/Pacman_left2.png" id="4_h8m7l"]
+[ext_resource type="Texture2D" uid="uid://4yuqo3gffo00" path="res://Scenes/Pacman/Pacman-right/Pacman_right2.png" id="4_hv8nc"]
+[ext_resource type="Script" uid="uid://5deo2yj0pxf0" path="res://Scenes/Pacman/animated_sprite_2d.gd" id="5_24k77"]
 [ext_resource type="Texture2D" uid="uid://ceemojd38kv8h" path="res://Scenes/Pacman/New Piskel.png" id="5_qea5t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_24k77"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_g0pt2")
+"texture": ExtResource("2_hfdak")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_b1vjm")
+"texture": ExtResource("3_88qsh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_qea5t")
+"texture": ExtResource("4_h8m7l")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_b1vjm")
+"texture": ExtResource("3_88qsh")
 }],
 "loop": true,
-"name": &"new_animation",
+"name": &"pacman_left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_qea5t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_24k77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hv8nc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_24k77")
+}],
+"loop": true,
+"name": &"pacman_right",
 "speed": 8.0
 }]
 
@@ -50,8 +71,9 @@ position = Vector2(-1, -48)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_24k77")
-animation = &"new_animation"
-autoplay = "new_animation"
+animation = &"pacman_right"
+autoplay = "pacman_right"
+script = ExtResource("5_24k77")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 shape = SubResource("RectangleShape2D_hv8nc")

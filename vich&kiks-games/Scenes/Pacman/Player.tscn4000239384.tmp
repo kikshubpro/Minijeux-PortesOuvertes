@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=3 uid="uid://cxo6grhc2ivha"]
+[gd_scene load_steps=22 format=3 uid="uid://cxo6grhc2ivha"]
 
 [ext_resource type="Script" uid="uid://c6mrqhimvqioj" path="res://Scenes/Pacman/Pacman.gd" id="1_qea5t"]
 [ext_resource type="Script" uid="uid://n2npit1nxbxx" path="res://Scenes/Pacman/player.gd" id="2_88qsh"]
@@ -6,19 +6,35 @@
 [ext_resource type="Texture2D" uid="uid://cjjdc56foty58" path="res://Scenes/Pacman/Pacman-right/Pacman_right.png" id="2_qea5t"]
 [ext_resource type="Texture2D" uid="uid://d1rv5tn4gyj6x" path="res://Scenes/Pacman/Pacman-right/pacman_right1.png" id="3_24k77"]
 [ext_resource type="Texture2D" uid="uid://d1dgbd0hu5r6j" path="res://Scenes/Pacman/Pacman-left/Pacman_left1.png" id="3_88qsh"]
-[ext_resource type="Texture2D" uid="uid://pgjvtpggt3mu" path="res://Scenes/Pacman/pacman-up/pacman-up1.png" id="3_n7lva"]
-[ext_resource type="Texture2D" uid="uid://ciap5a20rijs5" path="res://Scenes/Pacman/pacman-up/pacman-up2.png" id="4_1g2oj"]
+[ext_resource type="Texture2D" uid="uid://b3o0vr8d53npd" path="res://Scenes/Pacman/pacman-up/pacman-up1.png" id="3_n7lva"]
+[ext_resource type="Texture2D" uid="uid://dd603uollrbs0" path="res://Scenes/Pacman/pacman-up/pacman-up2.png" id="4_1g2oj"]
 [ext_resource type="Texture2D" uid="uid://c0eb5w3v323c1" path="res://Scenes/Pacman/Pacman-left/Pacman_left2.png" id="4_h8m7l"]
 [ext_resource type="Texture2D" uid="uid://4yuqo3gffo00" path="res://Scenes/Pacman/Pacman-right/Pacman_right2.png" id="4_hv8nc"]
-[ext_resource type="Texture2D" uid="uid://y4ybwww8d4u0" path="res://Scenes/Pacman/pacman-up/pacman-up3.png" id="5_mhdoh"]
-[ext_resource type="Texture2D" uid="uid://ba37mdoo5utee" path="res://Scenes/Pacman/New Piskel.png" id="5_qea5t"]
-[ext_resource type="Texture2D" uid="uid://ck8bb454qdl4o" path="res://Scenes/Pacman/Pacman-down/pacman-down1.png" id="6_vaf1h"]
-[ext_resource type="Texture2D" uid="uid://d0w4t4ea7c7w5" path="res://Scenes/Pacman/Pacman-down/pacman-down2.png" id="7_5ibyt"]
-[ext_resource type="Texture2D" uid="uid://dqu5lgmj7am7r" path="res://Scenes/Pacman/Pacman-down/pacman-down3.png" id="8_phaqk"]
-[ext_resource type="Texture2D" uid="uid://ei1yxxhbiay6" path="res://Scenes/Pacman/Piece.png" id="16_1g2oj"]
+[ext_resource type="Texture2D" uid="uid://dshfep2tq31yu" path="res://Scenes/Pacman/pacman-up/pacman-up3.png" id="5_mhdoh"]
+[ext_resource type="Texture2D" uid="uid://ceemojd38kv8h" path="res://Scenes/Pacman/New Piskel.png" id="5_qea5t"]
+[ext_resource type="Texture2D" uid="uid://djnn6aq0rh7wy" path="res://Scenes/Pacman/Pacman-down/pacman-down1.png" id="6_vaf1h"]
+[ext_resource type="Texture2D" uid="uid://c3i6e87cjeol1" path="res://Scenes/Pacman/Pacman-down/pacman-down2.png" id="7_5ibyt"]
+[ext_resource type="Texture2D" uid="uid://dmjueal15ibgq" path="res://Scenes/Pacman/Pacman-down/pacman-down3.png" id="8_phaqk"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_24k77"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_n7lva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1g2oj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_mhdoh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_1g2oj")
+}],
+"loop": true,
+"name": &"pacman-up",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("6_vaf1h")
@@ -69,23 +85,6 @@ animations = [{
 "loop": true,
 "name": &"pacman_right",
 "speed": 8.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("3_n7lva")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_1g2oj")
-}, {
-"duration": 1.0,
-"texture": ExtResource("5_mhdoh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("4_1g2oj")
-}],
-"loop": true,
-"name": &"pacman_up",
-"speed": 5.0
 }]
 
 [sub_resource type="GDScript" id="GDScript_hfdak"]
@@ -102,9 +101,6 @@ size = Vector2(32, 96)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qea5t"]
 size = Vector2(32, 32)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_mhdoh"]
-radius = 8.0
-
 [node name="Pacman" type="Node2D"]
 position = Vector2(1, 0)
 script = ExtResource("1_qea5t")
@@ -118,7 +114,7 @@ script = ExtResource("2_88qsh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
 sprite_frames = SubResource("SpriteFrames_24k77")
-animation = &"pacman_right"
+animation = &"pacman-up"
 autoplay = "pacman_right"
 script = SubResource("GDScript_hfdak")
 
@@ -1169,322 +1165,3 @@ texture = ExtResource("5_qea5t")
 [node name="deboutcol14" type="CollisionShape2D" parent="Haut Droite"]
 position = Vector2(943, 86)
 shape = SubResource("RectangleShape2D_qea5t")
-one_way_collision = true
-one_way_collision_margin = 0.0
-
-[node name="Pieces" type="Area2D" parent="."]
-
-[node name="piece1" type="Sprite2D" parent="Pieces"]
-position = Vector2(47, -48)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol1" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(47, -48)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece2" type="Sprite2D" parent="Pieces"]
-position = Vector2(47, -80)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol2" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(47, -80)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece3" type="Sprite2D" parent="Pieces"]
-position = Vector2(47, -112)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol3" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(47, -112)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece4" type="Sprite2D" parent="Pieces"]
-position = Vector2(47, -144)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol4" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(47, -144)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece5" type="Sprite2D" parent="Pieces"]
-position = Vector2(47, -176)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol5" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(47, -176)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece6" type="Sprite2D" parent="Pieces"]
-position = Vector2(47, -208)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol6" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(47, -208)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece7" type="Sprite2D" parent="Pieces"]
-position = Vector2(47, -16)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol7" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(47, -16)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece8" type="Sprite2D" parent="Pieces"]
-position = Vector2(79, -16)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol8" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(79, -16)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece9" type="Sprite2D" parent="Pieces"]
-position = Vector2(111, -16)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol9" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(111, -16)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece10" type="Sprite2D" parent="Pieces"]
-position = Vector2(111, -48)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol10" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(111, -48)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece11" type="Sprite2D" parent="Pieces"]
-position = Vector2(111, -80)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol11" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(111, -80)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece12" type="Sprite2D" parent="Pieces"]
-position = Vector2(111, -112)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol12" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(111, -112)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece13" type="Sprite2D" parent="Pieces"]
-position = Vector2(79, -112)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol13" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(79, -112)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece14" type="Sprite2D" parent="Pieces"]
-position = Vector2(111, -144)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol14" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(111, -144)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece15" type="Sprite2D" parent="Pieces"]
-position = Vector2(111, -176)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol15" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(111, -176)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece16" type="Sprite2D" parent="Pieces"]
-position = Vector2(111, -208)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol16" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(111, -208)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece17" type="Sprite2D" parent="Pieces"]
-position = Vector2(111, -240)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol17" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(111, -240)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece18" type="Sprite2D" parent="Pieces"]
-position = Vector2(111, -272)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol18" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(111, -272)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece19" type="Sprite2D" parent="Pieces"]
-position = Vector2(79, -272)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol19" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(79, -272)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece20" type="Sprite2D" parent="Pieces"]
-position = Vector2(47, -272)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol20" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(47, -272)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece21" type="Sprite2D" parent="Pieces"]
-position = Vector2(15, -272)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol21" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(15, -272)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece22" type="Sprite2D" parent="Pieces"]
-position = Vector2(143, -272)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol22" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(143, -272)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece23" type="Sprite2D" parent="Pieces"]
-position = Vector2(175, -272)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol23" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(175, -272)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece24" type="Sprite2D" parent="Pieces"]
-position = Vector2(207, -272)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol24" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(207, -272)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece25" type="Sprite2D" parent="Pieces"]
-position = Vector2(207, -240)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol25" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(207, -240)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece26" type="Sprite2D" parent="Pieces"]
-position = Vector2(207, -208)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol26" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(207, -208)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece27" type="Sprite2D" parent="Pieces"]
-position = Vector2(175, -208)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol27" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(175, -208)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece28" type="Sprite2D" parent="Pieces"]
-position = Vector2(175, -176)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol28" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(175, -176)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece29" type="Sprite2D" parent="Pieces"]
-position = Vector2(175, -144)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol29" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(175, -144)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece30" type="Sprite2D" parent="Pieces"]
-position = Vector2(207, -144)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol30" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(207, -144)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece31" type="Sprite2D" parent="Pieces"]
-position = Vector2(239, -144)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol31" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(239, -144)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece32" type="Sprite2D" parent="Pieces"]
-position = Vector2(175, -112)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol32" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(175, -112)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece33" type="Sprite2D" parent="Pieces"]
-position = Vector2(175, -80)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol33" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(175, -80)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece34" type="Sprite2D" parent="Pieces"]
-position = Vector2(143, -16)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol34" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(143, -16)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
-
-[node name="piece35" type="Sprite2D" parent="Pieces"]
-position = Vector2(175, -16)
-texture = ExtResource("16_1g2oj")
-
-[node name="piececol35" type="CollisionShape2D" parent="Pieces"]
-position = Vector2(175, -16)
-scale = Vector2(0.5, 0.5)
-shape = SubResource("CircleShape2D_mhdoh")
